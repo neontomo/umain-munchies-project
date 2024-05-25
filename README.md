@@ -1,9 +1,11 @@
-# umain restaurant project
+# Umain Munchies Project
 
 # contents
 
+- [screenshots](#screenshots)
 - [general notes](#general-notes)
-- [specifications](#specifications)
+- [API specifications](#api-specifications)
+- [error handling](#error-handling)
 - [example steps](#example-steps)
 - [install steps](#install-steps)
 - [api documentation (v1)](#api-documentation-v1)
@@ -22,45 +24,46 @@
 - base components/design on figma assets (don't reinvent things)
 - treat assignment as a real project (not home assignment) (my idea)
 - a website to discover restaurants but also **food** that matches a users needs
-- i will focus on core functionality and and then move on to flare if there is enough time - prioritising the important steps will be crucial in getting this up and running quickly (keyword: usefulness)
+- i will focus on core functionality and and then move on to flare if there is enough time - prioritising the important steps will be crucial in getting this up and running quickly (keywords: usefulness, user experience)
 
-## API
+## API specifications
 
-- The API only uses GET which means it can be tested in the browser (POST would require Postman or similar)
+- The API only uses GET which means it can be tested in the browser (POST would require Postman or similar), but also means I am only fetching information not sending/editing/deleting it
 - follow the API structure and build types in TypeScript according to that structure (examples: id, name, image_url)
 - API outputs arrays of restaurants
 
-## Error handling
-
-- How to show errors to the user is not specified, but errors are returned like this:
-
-````
-{
-    error	[...]
-    reason	[...]
-}```
-
 ## API example output
 
-```{ "restaurants":
-    [
-        {
-            "id": "987e32cf-2323-4cdb-a3ec-14cf925e34c3",
-            "name": "Waynes Coffee",
-            "rating": 4.5,
-            "filter_ids": [
-                "012aca16-f935-4ff9-9706-32b8a13aefeb"
-            ],
-            "image_url": "/images/coffee.png",
-            "delivery_time_minutes": 30,
-            "price_range_id": "cb0b2442-3eae-4e59-a737-bc50a055cdd7"
-        }
-    ]
-}```
+```json
+{
+  "restaurants": [
+    {
+      "id": "987e32cf-2323-4cdb-a3ec-14cf925e34c3",
+      "name": "Waynes Coffee",
+      "rating": 4.5,
+      "filter_ids": ["012aca16-f935-4ff9-9706-32b8a13aefeb"],
+      "image_url": "/images/coffee.png",
+      "delivery_time_minutes": 30,
+      "price_range_id": "cb0b2442-3eae-4e59-a737-bc50a055cdd7"
+    }
+  ]
+}
+```
+
+## API error handling
+
+- How to show errors to the user is not specified, but an example of how errors are returned is given in the API documentation:
+
+  ```json
+  {
+    "error": true,
+    "reason": "error message"
+  }
+  ```
 
 ## install steps
 
-not finished...
+- to be added...
 
 ## functionality requirements
 
@@ -74,15 +77,38 @@ not finished...
 
 ## architectural decisions:
 
+- to be added...
+
 ## specifications from client
 
 ### inputs
 
+- filters (visually represented as buttons)
+- food category
+- delivery time
+- price range
+- maybe more, like rating
+
 ### outputs
+
+- list of restaurants from API
+- restaurant details (name, rating, image, delivery time, price range) - to be displayed in a card style based on Figma design
+- potential error messages
+- opening hours
+- icons
+- time to delivery
 
 ### server & db
 
+- use existing API, simply call it and display the results
+
 ### resources
+
+- client provided:
+  - [Github with specs](https://github.com/apegroup/umain-work-test-web)
+  - [API endpoint](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/)
+  - [API docs](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api-docs/)
+  - [Figma design specs](https://www.figma.com/design/263XJno7ii0uEaarJP9Ydw/Umain-Tech-Case?node-id=27-5682)
 
 ## example steps
 
@@ -94,7 +120,9 @@ to be added...
 
 to be added...
 
-````
+```
+
+```
 
 ```
 
