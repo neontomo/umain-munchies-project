@@ -138,8 +138,6 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
 6. change my browser size - see the website change to fit the new size
 7. see clear states for filters and restaurant cards
 8. see error messages if something goes wrong
-9. make a purchase
-10. more to be added...
 
 ## what i learned and how i reasoned through the project
 
