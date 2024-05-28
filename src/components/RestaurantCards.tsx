@@ -3,7 +3,7 @@
 import RestaurantCard from '@/components/RestaurantCard'
 import { memo, useEffect, useState } from 'react'
 import { Restaurant } from '@/types/restaurants'
-import { getRestaurants } from '@/utils/getRestaurants'
+import { getRestaurants } from '@/api/getRestaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
 
 const RestaurantCards = memo(function RestaurantCards({
@@ -78,6 +78,8 @@ const RestaurantCards = memo(function RestaurantCards({
                 ? priceRangeIDs.includes(restaurant.price_range.range as string)
                 : true
             })
+
+            .sort((a, b) => (a.open ? -1 : 1)) // put closed restaurants at the end
             .map((restaurant) => (
               <RestaurantCard
                 key={restaurant.id}
@@ -86,6 +88,7 @@ const RestaurantCards = memo(function RestaurantCards({
                 deliveryTimeMinutes={restaurant.delivery_time_minutes}
                 icon={restaurant.image_url}
                 priceRange={restaurant.price_range}
+                open={restaurant.open}
               />
             ))}
       </div>

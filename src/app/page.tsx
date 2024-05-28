@@ -5,7 +5,7 @@ import SidebarFilters from '@/components/SidebarFilters'
 import RestaurantCards from '@/components/RestaurantCards'
 import FoodCards from '@/components/FoodCards'
 import { filter } from '@/types/filters'
-import { getFiltersAvailable } from '@/utils/getFiltersAvailable'
+import { getAllFilters } from '@/api/getAllFilters'
 
 export default memo(function Home() {
   const [filtersAvailable, setFiltersAvailable] = useState<filter[]>([])
@@ -17,7 +17,7 @@ export default memo(function Home() {
   useEffect(() => {
     const fetchFiltersAvailable = async () => {
       if (!loading) return
-      const data = await getFiltersAvailable()
+      const data = await getAllFilters()
       setFiltersAvailable(data?.filters || [])
       setLoading(false)
     }

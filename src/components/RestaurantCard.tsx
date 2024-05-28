@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import Pill from '@/components/Pill'
 import Button from '@/components/Button'
-import { checkRestaurantOpen } from '@/utils/checkRestaurantOpen'
 import SkeletonLoader from '@/components/SkeletonLoader'
 import { PriceRange } from '@/types/restaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
@@ -13,7 +12,8 @@ function RestaurantCard({
   deliveryTimeMinutes = 0,
   icon,
   loading = false,
-  priceRange
+  priceRange,
+  open = false
 }: {
   id: string
   name?: string
@@ -21,21 +21,9 @@ function RestaurantCard({
   icon?: string
   loading?: boolean
   priceRange?: PriceRange
+  open?: boolean
 }) {
-  const [open, setOpen] = useState(false)
   const deliveryTime = convertMinutesToRanges(deliveryTimeMinutes)
-  const [loadingOpeningTimes, setLoadingOpeningTimes] = useState(true)
-
-  useEffect(() => {
-    const fetchOpen = async () => {
-      if (!loadingOpeningTimes) return
-      const data = await checkRestaurantOpen({ id })
-      setOpen(data?.is_open || false)
-      setLoadingOpeningTimes(false)
-    }
-
-    fetchOpen()
-  }, [])
 
   return (
     <div
@@ -81,8 +69,6 @@ function RestaurantCard({
               </Pill>
             )}
           </div>
-
-          <>{priceRange?.range}</>
 
           {!open && (
             <div className="flex justify-center">
