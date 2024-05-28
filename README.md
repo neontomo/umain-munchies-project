@@ -22,7 +22,7 @@
 
 a working demo is available at:
 
-[https://munchies-food-delivery.netlify.app](https://munchies-food-delivery.netlify.app)
+<a href="https://munchies-food-delivery.netlify.app" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 10px;">munchies-food-delivery.netlify.app</a>
 
 ## screenshots
 
@@ -292,4 +292,4 @@ If I had more time I would have:
 
 I hope you enjoyed my project! try it here:
 
-[https://munchies-food-delivery.netlify.app](https://munchies-food-delivery.netlify.app)
+<a href="https://munchies-food-delivery.netlify.app" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 10px;">munchies-food-delivery.netlify.app</a>
