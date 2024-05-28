@@ -59,7 +59,7 @@ a working demo is available at:
 ## API example input
 
 ```bash
-curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/restaurants/82be30b7-d217-4609-89fe-454b40740cea' \
+curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/restaurants/' \
  -H 'accept: application/json'
 ```
 
@@ -69,13 +69,13 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/restaura
 {
   "restaurants": [
     {
-      "id": "fff380e7-da5b-4dd1-8648-6048c0a9ec4d",
+      "id": "afdf40d9-ecab-4f05-82c7-6f9102524f42",
       "name": "Waynes Coffee",
       "rating": 4.5,
-      "filter_ids": ["5c776b18-fc1b-49b6-bf74-9778f7ee7537"],
+      "filter_ids": ["34e186b1-f7c1-4c5f-9f26-f68fc3e474f9"],
       "image_url": "/images/coffee.png",
       "delivery_time_minutes": 30,
-      "price_range_id": "4bd4df6d-e6c9-428d-8c5c-b9e0b6b185db"
+      "price_range_id": "ff377a10-184b-4e49-b0cc-adcbc9413858"
     }
   ]
 }
@@ -179,7 +179,7 @@ while designing my solution to the project I was mindful of sticking to the spec
 
 ### mindset and approach
 
-I built the project in an iterative way, making simple changes and verifying them. I separated the tasks of implementing the backend/API and the design/components. when doing both at the same time it becomes messy because they require different ways of thinking. by making sure that the backend has reliable inputs and outputs, I could start to design the frontend and make the UI come alive with functionality. I call this "wearing different hats".
+I built the project in an iterative way, making simple changes and verifying them. I separated the tasks of implementing the backend/API and the design/components (I call this "wearing different hats"). when doing both at the same time it becomes messy because they require different ways of thinking. by making sure that the backend has reliable inputs and outputs, I could start to design the frontend and make the UI come alive with functionality.
 
 ### clear code
 
@@ -187,15 +187,15 @@ I made an effort to keep reusable functionality as components in their own files
 
 ### mobile friendly
 
-the specs specified responsive design, so I made sure to test the site on mobile and desktop. Tailwind has good support for building conditional classes based on screen size. I tested my site on an iPhone 12 and a Macbook AIR M1 and implemented an overlay that is expected on mobile. in production, this might be a mobile app instead of a website.
+the specs specified responsive design, so I made sure to test the site on mobile and desktop. Tailwind has good support for building conditional classes based on screen size. I tested my site on an iPhone 12 and a Macbook AIR M1 and implemented an overlay that is expected on mobile. in future production, this might be a mobile app instead of a website.
 
 ### tailwind
 
-I adapted similar Tailwind classes to the spec, but wanted to avoid excessive CSS, so I used practical substitutions like replacing `bg-[#00703A]` with `bg-green-800` which is similar but more practical. I also used Tailwind's `@apply` directive a few times to keep my CSS DRY.
+I adapted similar Tailwind classes to the spec, but wanted to avoid excessive CSS, so I used practical substitutions like replacing `bg-[#00703A]` with `bg-green-800` which is similar. I also used Tailwind's `@apply` directive a few times to keep my CSS DRY.
 
 ### filters
 
-I sorted restaurants by open → closed, to maximise usefulness. this could also be added to other filters.
+I sorted restaurants by open → closed, to maximise usefulness. this could also be added to other filters in the future.
 
 ### type safety
 
