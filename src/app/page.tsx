@@ -6,8 +6,10 @@ import RestaurantCards from '@/components/RestaurantCards/RestaurantCards'
 import FoodCards from '@/components/FoodCards/FoodCards'
 import { filter } from '@/types/filters'
 import { getAllFilters } from '@/api/getAllFilters'
+import Overlay from '@/components/Overlay'
 
 export default memo(function Home() {
+  const [overlayOpen, setOverlayOpen] = useState(false)
   const [filtersAvailable, setFiltersAvailable] = useState<filter[]>([])
   const [filterIDs, setFilterIDs] = useState<string[]>([])
   const [priceRangeIDs, setPriceRangeIDs] = useState<string[]>([])
@@ -25,10 +27,25 @@ export default memo(function Home() {
     fetchFiltersAvailable()
   }, [])
 
+  useEffect(() => {
+    if (!window) return
+    if (window.innerWidth < 768) {
+      setOverlayOpen(true)
+    } else {
+      setOverlayOpen(false)
+    }
+  }, [])
+
   return (
     <main className="min-h-screen w-full mx-auto overflow-x-hidden">
+      <Overlay
+        overlayOpen={overlayOpen}
+        setOverlayOpen={setOverlayOpen}
+      />
+
       <Nav />
-      <section className="flex flex-col md:flex-row gap-6 md:gap-8 w-full h-full">
+
+      <section className="flex flex-col md:flex-row gap-6 md:gap-8 w-full h-full z-0">
         <SidebarFilters
           filtersAvailable={filtersAvailable}
           filterIDs={filterIDs}
@@ -51,6 +68,7 @@ export default memo(function Home() {
           />
         </section>
       </section>
+
       <footer className="mt-32 flex flex-row justify-center w-full overflow-hidden text-xs">
         made by Tomo with ❤️
       </footer>
