@@ -5,18 +5,18 @@
 - [demo](#demo)
 - [screenshots](#screenshots)
 - [general notes](#general-notes)
-- [API specifications](#API-specifications)
-- [API example input](#API-example-input)
-- [API example output](#API-example-output)
-- [API error handling](#API-error-handling)
-- [install steps](#install-steps)
-- [functionality requirements](#functionality-requirements)
-- [architectural decisions](#architectural-decisions)
+- [API specifications](#api-specifications)
+- [API example input](#api-example-input)
+- [API example output](#api-example-output)
+- [API error handling](#api-error-handling)
 - [specifications from client](#specifications-from-client)
+- [install steps](#install-steps)
 - [example steps by user](#example-steps-by-user)
-- [what I learned and how I reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
+- [how I reasoned through the project](#how-i-reasoned-through-the-project)
+- [what I learned](#what-i-learned)
 - [things left out or to improve](#things-left-out-or-to-improve)
 - [project meme](#project-meme)
+- [thank you](#thank-you)
 
 ## demo
 
@@ -155,8 +155,6 @@ npm run dev
 npm run build && npm run start
 ```
 
-## architectural decisions
-
 ## example steps by user
 
 1. open the website
@@ -275,6 +273,7 @@ I spent some time understanding how to work with Figma which was new terrority. 
 
 If I had more time I would have:
 
+- worked with the team to get feedback and ideas
 - verified that the fonts are exactly the same - and legal to use
 - spent more time with the Figma design to understand the design decisions and component structure
 - added more error checking and testing - perhaps show a toast error message to the user if the API is down
