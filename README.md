@@ -2,7 +2,7 @@
 
 # table of contents
 
-- [project meme](#project-meme)
+- [demo](#demo)
 - [screenshots](#screenshots)
 - [general notes](#general-notes)
 - [API specifications](#api-specifications)
@@ -16,10 +16,7 @@
 - [example steps by user](#example-steps-by-user)
 - [what i learned and how i reasoned through the project](#what-i-learned-and-how-i-reasoned-through-the-project)
 - [things left out or to improve](#things-left-out-or-to-improve)
-
-## project meme
-
-![simpsons](https://github.com/neontomo/umain-restaurant-project/assets/105588693/6599a56c-8bc7-4112-a5ad-a82a8ffd47e4)
+- [project meme](#project-meme)
 
 ## demo
 
@@ -138,8 +135,6 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
 
 ## install steps
 
-## install steps
-
 1. run these commands:
 
 ```bash
@@ -180,3 +175,7 @@ to be added...
 ## things left out or to improve
 
 to be added...
+
+## project meme
+
+![simpsons](https://github.com/neontomo/umain-restaurant-project/assets/105588693/6599a56c-8bc7-4112-a5ad-a82a8ffd47e4)
