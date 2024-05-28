@@ -1,12 +1,12 @@
 'use client'
 import { memo, useEffect, useState } from 'react'
-import Nav from '@/components/Nav'
+import Nav from '@/components/Nav/Nav'
 import SidebarFilters from '@/components/SidebarFilters/SidebarFilters'
 import RestaurantCards from '@/components/RestaurantCards/RestaurantCards'
 import FoodCards from '@/components/FoodCards/FoodCards'
 import { filter } from '@/types/filters'
 import { getAllFilters } from '@/api/getAllFilters'
-import Overlay from '@/components/Overlay'
+import Overlay from '@/components/Mobile/Overlay'
 
 export default memo(function Home() {
   const [overlayOpen, setOverlayOpen] = useState(false)

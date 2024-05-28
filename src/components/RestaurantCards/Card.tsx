@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Pill from '@/components/Pill'
-import Button from '@/components/Button'
-import SkeletonLoader from '@/components/SkeletonLoader'
+import Pill from '@/components/UI/Pill'
+import Button from '@/components/UI/Button'
+import SkeletonLoader from '@/components/UI/SkeletonLoader'
 import { Restaurant } from '@/types/restaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
 

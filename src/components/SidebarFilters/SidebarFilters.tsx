@@ -1,5 +1,5 @@
 'use client'
-import Pill from '@/components/Pill'
+import Pill from '@/components/UI/Pill'
 import { filter } from '@/types/filters'
 import { addOrRemoveDeliveryTimeFilter } from '@/utils/addOrRemoveDeliveryTimeFilter'
 import { addOrRemoveFilter } from '@/utils/addOrRemoveFilter'

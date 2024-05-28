@@ -1,4 +1,4 @@
-import SkeletonLoader from '@/components/SkeletonLoader'
+import SkeletonLoader from '@/components/UI/SkeletonLoader'
 
 function Card({
   title,
