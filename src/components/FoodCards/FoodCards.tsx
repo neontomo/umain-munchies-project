@@ -54,7 +54,7 @@ function FoodCards({
           </div>
         </div>
       </section>
-      <div className="flex justify-end items-center text-xs text-gray-400">
+      <div className="flex justify-end text-xs text-gray-400">
         Scroll &rarr;
       </div>
     </div>

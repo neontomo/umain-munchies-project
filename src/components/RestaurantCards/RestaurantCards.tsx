@@ -66,12 +66,15 @@ const RestaurantCards = memo(function RestaurantCards({
 
   return (
     <section className="content w-full h-full overflow-x-hidden">
-      {!loading && sortedRestaurants.length === 0 ? (
-        <h1>No restaurants found</h1>
-      ) : (
-        <h1>Restaurant&rsquo;s</h1>
-      )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      <h1>
+        {!loading && sortedRestaurants.length === 0 ? (
+          'No restaurants found'
+        ) : (
+          <>Restaurant&rsquo;s</>
+        )}
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 overflow-hidden">
         {restaurants.length === 0 && (
           <>
             {Array(7)
@@ -79,8 +82,13 @@ const RestaurantCards = memo(function RestaurantCards({
               .map((_, index) => (
                 <Card
                   key={`no-restaurants-${index}`}
-                  id={`no-restaurants-${index}`}
                   loading={true}
+                  restaurant={
+                    {
+                      id: `no-restaurants-${index}`,
+                      name: `no-restaurants-${index}`
+                    } as Restaurant
+                  }
                 />
               ))}
           </>
@@ -91,12 +99,7 @@ const RestaurantCards = memo(function RestaurantCards({
           sortedRestaurants.map((restaurant) => (
             <Card
               key={restaurant.id}
-              id={restaurant.id}
-              name={restaurant.name}
-              deliveryTimeMinutes={restaurant.delivery_time_minutes}
-              icon={restaurant.image_url}
-              priceRange={restaurant.price_range}
-              open={restaurant.open}
+              restaurant={restaurant}
             />
           ))}
       </div>

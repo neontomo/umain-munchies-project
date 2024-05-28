@@ -4,37 +4,36 @@ import { filter } from '@/types/filters'
 import { addOrRemoveDeliveryTimeFilter } from '@/utils/addOrRemoveDeliveryTimeFilter'
 import { addOrRemoveFilter } from '@/utils/addOrRemoveFilter'
 import { addOrRemovePriceRangeFilter } from '@/utils/addOrRemovePriceRangeFilter'
-import {
-  convertRangesToMinutes,
-  deliveryTimesAvailable
-} from '@/utils/timeManagement'
+import { deliveryTimesAvailable } from '@/utils/timeManagement'
+import { priceRangesAvailable } from '@/utils/priceRangesAvailable'
+import SidebarFilter from '@/components/SidebarFilters/SidebarFilter'
 
 function SidebarFilters({
   filtersAvailable,
   filterIDs,
-  priceRangeIDs,
   setFilterIDs,
+  priceRangeIDs,
   setPriceRangeIDs,
   deliveryTimes,
   setDeliveryTimes
 }: {
   filtersAvailable: filter[]
   filterIDs: string[]
-  priceRangeIDs: string[]
   setFilterIDs: (filterIDs: string[]) => void
+  priceRangeIDs: string[]
   setPriceRangeIDs: (filterIDs: string[]) => void
   deliveryTimes: string[]
   setDeliveryTimes: (filterIDs: string[]) => void
 }) {
-  const priceRangesAvailable = ['$', '$$', '$$$', '$$$$']
   return (
     <>
       <aside className="sidebar flex flex-col w-full md:min-w-[239px] md:max-w-[239px] md:border md:border-[#E5E5E5] rounded-xl md:p-[24px] md:bg-white">
         <h2 className="hidden md:block title mb-6">Filter</h2>
-        <article
+
+        <SidebarFilter
           id="food-category"
-          className="hidden md:block filter-sub-category mb-4">
-          <h4 className="text-[#999999] uppercase mb-2">Food Category</h4>
+          title="Food Category"
+          hiddenOnMobile>
           <div className="flex flex-col gap-2 flex-wrap">
             {Object.values(filtersAvailable).map((filter, index) => (
               <div
@@ -56,11 +55,11 @@ function SidebarFilters({
               </div>
             ))}
           </div>
-        </article>
-        <article
+        </SidebarFilter>
+
+        <SidebarFilter
           id="delivery-time"
-          className="filter-sub-category md:mb-4">
-          <h4 className="text-[#999999] uppercase mb-2">Delivery Time</h4>
+          title="Delivery Time">
           <div className="flex flex-row gap-2 flex-wrap">
             {deliveryTimesAvailable.map((time, index) => (
               <Pill
@@ -79,11 +78,12 @@ function SidebarFilters({
               </Pill>
             ))}
           </div>
-        </article>
-        <article
+        </SidebarFilter>
+
+        <SidebarFilter
           id="price-range"
-          className="hidden md:block filter-sub-category mb-4">
-          <h4 className="text-[#999999] uppercase mb-2">Price Range</h4>
+          title="Price Range"
+          hiddenOnMobile>
           <div className="flex flex-row gap-2 flex-wrap">
             {priceRangesAvailable.map((price, index) => (
               <Pill
@@ -102,7 +102,7 @@ function SidebarFilters({
               </Pill>
             ))}
           </div>
-        </article>
+        </SidebarFilter>
       </aside>
     </>
   )

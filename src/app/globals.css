@@ -14,10 +14,6 @@
   margin: 0;
 }
 
-/* h1: '40px',
-        h2: '24px',
-        h3: '20px',
-        h4: '12px' */
 h1 {
   @apply font-bold text-xl md:text-4xl;
 }

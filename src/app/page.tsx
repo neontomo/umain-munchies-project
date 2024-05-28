@@ -1,7 +1,7 @@
 'use client'
 import { memo, useEffect, useState } from 'react'
 import Nav from '@/components/Nav'
-import SidebarFilters from '@/components/SidebarFilters'
+import SidebarFilters from '@/components/SidebarFilters/SidebarFilters'
 import RestaurantCards from '@/components/RestaurantCards/RestaurantCards'
 import FoodCards from '@/components/FoodCards/FoodCards'
 import { filter } from '@/types/filters'

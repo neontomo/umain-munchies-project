@@ -3,39 +3,32 @@ import { useEffect, useState } from 'react'
 import Pill from '@/components/Pill'
 import Button from '@/components/Button'
 import SkeletonLoader from '@/components/SkeletonLoader'
-import { PriceRange } from '@/types/restaurants'
+import { Restaurant } from '@/types/restaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
 
 function RestaurantCard({
-  id,
-  name,
-  deliveryTimeMinutes = 0,
-  icon,
-  loading = false,
-  priceRange,
-  open = false
+  restaurant,
+  loading = false
 }: {
-  id: string
-  name?: string
-  deliveryTimeMinutes?: number
-  icon?: string
+  restaurant: Restaurant
   loading?: boolean
-  priceRange?: PriceRange
-  open?: boolean
 }) {
-  const deliveryTime = convertMinutesToRanges(deliveryTimeMinutes)
+  const deliveryTime = restaurant
+    ? convertMinutesToRanges(restaurant.delivery_time_minutes || 0)
+    : ''
 
   return (
     <div
+      id={restaurant.id || 'restaurant-card'}
       className={`restaurant-card zoom-on-hover cursor-pointer flex flex-row min-h-[202px] justify-start items-start border border-[#E5E5E5] rounded-xl p-3 bg-opacity-40 bg-white`}
       style={{ position: 'relative' }}>
-      {icon && !loading && (
+      {restaurant?.image_url && !loading && (
         <div
           className={`restaurant-card-bg ${
-            open ? 'opacity-100' : 'opacity-10'
+            restaurant.open ? 'opacity-100' : 'opacity-10'
           }`}
           style={{
-            backgroundImage: `url(${icon})`
+            backgroundImage: `url(${restaurant.image_url})`
           }}></div>
       )}
 
@@ -48,7 +41,7 @@ function RestaurantCard({
           <div className="flex flex-row gap-1">
             <Pill rounded>
               <div className="flex flex-row items-center gap-1">
-                {open ? (
+                {restaurant.open ? (
                   <>
                     <span className="w-2 h-2 rounded-full bg-[#00703A]"></span>
                     <span>Open</span>
@@ -61,25 +54,27 @@ function RestaurantCard({
                 )}
               </div>
             </Pill>
-            {deliveryTimeMinutes > 0 && open && (
+            {restaurant.delivery_time_minutes > 0 && restaurant.open && (
               <Pill
                 rounded
-                alt={`${deliveryTimeMinutes} min`}>
+                alt={`${restaurant.delivery_time_minutes} min`}>
                 {deliveryTime}
               </Pill>
             )}
           </div>
 
-          {!open && (
+          {!restaurant.open && (
             <div className="flex justify-center">
               <Pill disabled>Opens tomorrow at 12 pm</Pill>
             </div>
           )}
           <div className="flex flex-row justify-between items-center w-full">
-            <h3>{name}</h3>
+            <h3 className={!restaurant.open ? 'text-gray-400' : 'text-black'}>
+              {restaurant.name}
+            </h3>
             <Button
-              alt={`Buy food from ${name}`}
-              disabled={!open}>
+              alt={`Buy food from ${restaurant.name}`}
+              disabled={!restaurant.open}>
               &rarr;
             </Button>
           </div>
