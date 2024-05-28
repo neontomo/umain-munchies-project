@@ -28,7 +28,7 @@ export default memo(function Home() {
   return (
     <main className="min-h-screen w-full mx-auto overflow-x-hidden">
       <Nav />
-      <section className="flex flex-row gap-8 w-full h-full">
+      <section className="flex flex-col md:flex-row gap-6 md:gap-8 w-full h-full">
         <SidebarFilters
           filtersAvailable={filtersAvailable}
           filterIDs={filterIDs}

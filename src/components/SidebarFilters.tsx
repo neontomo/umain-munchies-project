@@ -29,11 +29,11 @@ function SidebarFilters({
   const priceRangesAvailable = ['$', '$$', '$$$', '$$$$']
   return (
     <>
-      <aside className="sidebar flex flex-col min-w-[239px] max-w-[239px] border border-[#E5E5E5] rounded-xl p-[24px] bg-white">
-        <h2 className="title mb-6">Filter</h2>
+      <aside className="sidebar flex flex-col w-full md:min-w-[239px] md:max-w-[239px] md:border md:border-[#E5E5E5] rounded-xl md:p-[24px] md:bg-white">
+        <h2 className="hidden md:block title mb-6">Filter</h2>
         <article
           id="food-category"
-          className="filter-sub-category mb-4">
+          className="hidden md:block filter-sub-category mb-4">
           <h4 className="text-[#999999] uppercase mb-2">Food Category</h4>
           <div className="flex flex-col gap-2 flex-wrap">
             {Object.values(filtersAvailable).map((filter, index) => (
@@ -59,7 +59,7 @@ function SidebarFilters({
         </article>
         <article
           id="delivery-time"
-          className="filter-sub-category mb-4">
+          className="filter-sub-category md:mb-4">
           <h4 className="text-[#999999] uppercase mb-2">Delivery Time</h4>
           <div className="flex flex-row gap-2 flex-wrap">
             {deliveryTimesAvailable.map((time, index) => (
@@ -82,7 +82,7 @@ function SidebarFilters({
         </article>
         <article
           id="price-range"
-          className="filter-sub-category mb-4">
+          className="hidden md:block filter-sub-category mb-4">
           <h4 className="text-[#999999] uppercase mb-2">Price Range</h4>
           <div className="flex flex-row gap-2 flex-wrap">
             {priceRangesAvailable.map((price, index) => (

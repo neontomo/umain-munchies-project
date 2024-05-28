@@ -45,7 +45,7 @@ function RestaurantCard({
         </div>
       ) : (
         <div className="flex flex-col justify-between h-full w-full">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-1">
             <Pill rounded>
               <div className="flex flex-row items-center gap-1">
                 {open ? (
@@ -72,7 +72,7 @@ function RestaurantCard({
 
           {!open && (
             <div className="flex justify-center">
-              <Pill disabled>Opens tomorrow</Pill>
+              <Pill disabled>Opens tomorrow at 12 pm</Pill>
             </div>
           )}
           <div className="flex flex-row justify-between items-center w-full">

@@ -6,11 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        base: '12px',
-        h1: '40px',
-        h2: '24px',
-        h3: '20px',
-        h4: '12px'
+        base: '12px'
       },
       transitionProperty: {
         height: 'height'
