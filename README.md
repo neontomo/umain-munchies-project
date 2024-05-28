@@ -21,9 +21,23 @@
 
 ![simpsons](https://github.com/neontomo/umain-restaurant-project/assets/105588693/6599a56c-8bc7-4112-a5ad-a82a8ffd47e4)
 
+## demo
+
+a working demo is available at:
+
+[https://munchies-food-delivery.netlify.app](https://munchies-food-delivery.netlify.app)
+
 ## screenshots
 
-- to be added...
+### desktop
+
+![munchies-screenshot](https://github.com/neontomo/umain-munchies-project/assets/105588693/d7522835-b713-4708-8d95-812364f5ec93)
+
+### mobile
+
+![munchies-screenshot-mobile](https://github.com/neontomo/umain-munchies-project/assets/105588693/0590a2b8-447a-4aa5-a365-72241da31d4d)
+
+![munchies-screenshot-mobile-2](https://github.com/neontomo/umain-munchies-project/assets/105588693/fdb84ecd-aa7d-4afb-89ec-02ea7f57a351)
 
 ## general notes
 
@@ -80,6 +94,8 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
   }
   ```
 
+- I will not display errors to the user, but will log them to the console for debugging purposes and check for errors before outputting data to the user
+
 ## specifications from client
 
 ### functionality requirements
@@ -111,7 +127,7 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
 
 ### server & db
 
-- use existing API
+- use existing Restful API (GET only)
 
 ### resources
 
@@ -122,7 +138,25 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
 
 ## install steps
 
-- to be added...
+## install steps
+
+1. run these commands:
+
+```bash
+
+# clone the repo
+git clone https://github.com/neontomo/umain-munchies-project.git
+cd umain-munchies-project
+
+# install dependencies
+npm install
+
+# run the server in development
+npm run dev
+
+# or run the server in production
+npm run build && npm run start
+```
 
 ## architectural decisions
 
@@ -137,7 +171,7 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaura
 5. deselect a filter - see the list change again
 6. change my browser size - see the website change to fit the new size
 7. see clear states for filters and restaurant cards
-8. see error messages if something goes wrong
+8. maybe: see error messages if something goes wrong
 
 ## what i learned and how i reasoned through the project
 
