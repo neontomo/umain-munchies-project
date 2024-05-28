@@ -27,7 +27,7 @@ function RestaurantCard({
 
   return (
     <div
-      className={`restaurant-card flex flex-row min-h-[202px] justify-start items-start border border-[#E5E5E5] rounded-xl p-3 bg-opacity-40 bg-white`}
+      className={`restaurant-card zoom-on-hover cursor-pointer flex flex-row min-h-[202px] justify-start items-start border border-[#E5E5E5] rounded-xl p-3 bg-opacity-40 bg-white`}
       style={{ position: 'relative' }}>
       {icon && !loading && (
         <div

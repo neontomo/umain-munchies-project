@@ -1,6 +1,6 @@
 'use client'
 
-import RestaurantCard from '@/components/RestaurantCard'
+import Card from '@/components/RestaurantCards/Card'
 import { memo, useEffect, useState } from 'react'
 import { Restaurant } from '@/types/restaurants'
 import { getRestaurants } from '@/api/getRestaurants'
@@ -65,7 +65,7 @@ const RestaurantCards = memo(function RestaurantCards({
   }, [restaurants, filterIDs, deliveryTimes, priceRangeIDs])
 
   return (
-    <section className="content w-full h-full">
+    <section className="content w-full h-full overflow-x-hidden">
       {!loading && sortedRestaurants.length === 0 ? (
         <h1>No restaurants found</h1>
       ) : (
@@ -77,7 +77,7 @@ const RestaurantCards = memo(function RestaurantCards({
             {Array(7)
               .fill(null)
               .map((_, index) => (
-                <RestaurantCard
+                <Card
                   key={`no-restaurants-${index}`}
                   id={`no-restaurants-${index}`}
                   loading={true}
@@ -89,7 +89,7 @@ const RestaurantCards = memo(function RestaurantCards({
         {!loading &&
           sortedRestaurants &&
           sortedRestaurants.map((restaurant) => (
-            <RestaurantCard
+            <Card
               key={restaurant.id}
               id={restaurant.id}
               name={restaurant.name}

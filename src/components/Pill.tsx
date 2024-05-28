@@ -19,10 +19,10 @@ function Pill({
       title={alt}
       onClick={onClick}>
       <div
-        className={`border py-1 px-2 text-base ${
+        className={`border py-1 px-2 text-base hover:bg-gray-100 transition-all duration-500 ${
           rounded ? 'rounded-2xl' : 'rounded-lg'
         } ${disabled ? 'bg-gray-100' : 'bg-white cursor-pointer'} ${
-          select ? 'border-black' : 'border-[#E5E5E5]'
+          select ? 'border-gray-400' : 'border-[#E5E5E5]'
         }`}>
         {children}
       </div>

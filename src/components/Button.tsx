@@ -12,7 +12,7 @@ function Button({
   return (
     <button
       title={alt || 'button'}
-      className={`rounded-full bg-[#00703A] text-white min-h-8 min-w-8 hover:bg-[#005F34] transition-all duration-300 ease-in-out
+      className={`rounded-full bg-[#00703A] text-white min-h-8 min-w-8 hover:bg-[#3fa476] transition-all duration-300 ease-in-out
       ${disabled ? 'opacity-30' : 'opacity-100 cursor-pointer'}`}
       onClick={onClick}
       disabled={disabled}>

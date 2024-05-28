@@ -2,8 +2,8 @@
 import { memo, useEffect, useState } from 'react'
 import Nav from '@/components/Nav'
 import SidebarFilters from '@/components/SidebarFilters'
-import RestaurantCards from '@/components/RestaurantCards'
-import FoodCards from '@/components/FoodCards'
+import RestaurantCards from '@/components/RestaurantCards/RestaurantCards'
+import FoodCards from '@/components/FoodCards/FoodCards'
 import { filter } from '@/types/filters'
 import { getAllFilters } from '@/api/getAllFilters'
 
@@ -51,6 +51,9 @@ export default memo(function Home() {
           />
         </section>
       </section>
+      <footer className="mt-32 flex flex-row justify-center w-full overflow-hidden text-xs">
+        made by Tomo with ❤️
+      </footer>
     </main>
   )
 })

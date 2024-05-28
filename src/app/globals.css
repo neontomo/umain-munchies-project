@@ -65,3 +65,7 @@ button {
   height: 100%;
   pointer-events: none;
 }
+
+.zoom-on-hover {
+  @apply transition ease-in-out hover:scale-100 md:hover:scale-[1.02] lg:hover:scale-[1.02] duration-300 z-[90];
+}

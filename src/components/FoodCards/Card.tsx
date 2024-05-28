@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SkeletonLoader from '@/components/SkeletonLoader'
 
-function FoodCard({
+function Card({
   title,
   icon,
   onClick,
@@ -17,8 +17,8 @@ function FoodCard({
   return (
     <div
       style={{ position: 'relative' }}
-      className={`food-card cursor-pointer flex flex-row justify-between border rounded-xl p-4 bg-white min-h-[80px] min-w-[160px] ${
-        select ? 'border-black' : 'border-[#E5E5E5]'
+      className={`food-card cursor-pointer flex flex-row justify-between border rounded-xl p-4 bg-white min-h-[80px] min-w-[160px] hover:bg-gray-100 transition-all duration-300 ${
+        select ? 'border-gray-400' : 'border-[#E5E5E5]'
       }`}
       onClick={onClick}>
       {icon && !loading && (
@@ -39,4 +39,4 @@ function FoodCard({
   )
 }
 
-export default FoodCard
+export default Card
