@@ -22,7 +22,9 @@
 
 a working demo is available at:
 
-<a href="https://munchies-food-delivery.netlify.app" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 10px;">munchies-food-delivery.netlify.app</a>
+<a href="https://munchies-food-delivery.netlify.app">
+  <img src="https://img.shields.io/badge/DEMO-munchies&dash;food&dash;delivery&#46;netlify&#46;app-grey?style=for-the-badge&logo=netlify" alt="Demo">
+</a>
 
 ## screenshots
 
@@ -292,4 +294,6 @@ If I had more time I would have:
 
 I hope you enjoyed my project! try it here:
 
-<a href="https://munchies-food-delivery.netlify.app" style="background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 10px;">munchies-food-delivery.netlify.app</a>
+<a href="https://munchies-food-delivery.netlify.app">
+  <img src="https://img.shields.io/badge/DEMO-munchies&dash;food&dash;delivery&#46;netlify&#46;app-grey?style=for-the-badge&logo=netlify" alt="Demo">
+</a>
