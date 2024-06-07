@@ -1,20 +1,19 @@
 'use client'
 
 import Card from '@/components/RestaurantCards/Card'
-import { memo, useEffect, useState } from 'react'
+import { memo, useEffect, useState, useContext } from 'react'
 import { Restaurant } from '@/types/restaurants'
 import { getRestaurants } from '@/api/getRestaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
+import { SidebarFiltersContext } from '@/components/SidebarFilters/SidebarFiltersContext'
 
-const RestaurantCards = memo(function RestaurantCards({
-  filterIDs = [],
-  deliveryTimes = [],
-  priceRangeIDs = []
-}: {
-  filterIDs?: string[]
-  deliveryTimes?: string[]
-  priceRangeIDs?: string[]
-}) {
+const RestaurantCards = memo(function RestaurantCards() {
+  const {
+    filterIDs = [],
+    priceRangeIDs = [],
+    deliveryTimes = []
+  } = useContext(SidebarFiltersContext)
+
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
   const [sortedRestaurants, setSortedRestaurants] = useState<Restaurant[]>([])
   const [loading, setLoading] = useState(true)

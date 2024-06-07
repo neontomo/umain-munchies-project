@@ -21,7 +21,7 @@ function Overlay({
         </div>
         <div className="flex flex-row w-full">
           <button
-            className="w-full p-4 rounded-md border border-white text-white bg-transparent hover:bg-white hover:text-green-800 transition-all duration-300 ease-in-out text-lg"
+            className="overlay-button"
             onClick={() => setOverlayOpen(false)}>
             Continue
           </button>

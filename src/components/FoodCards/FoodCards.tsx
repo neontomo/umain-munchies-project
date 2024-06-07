@@ -1,16 +1,15 @@
+import { useContext } from 'react'
 import Card from '@/components/FoodCards/Card'
-import { filter } from '@/types/filters'
 import { addOrRemoveFilter } from '@/utils/addOrRemoveFilter'
+import { SidebarFiltersContext } from '@/components/SidebarFilters/SidebarFiltersContext'
 
-function FoodCards({
-  filtersAvailable,
-  filterIDs,
-  setFilterIDs
-}: {
-  filtersAvailable: filter[]
-  filterIDs: string[]
-  setFilterIDs: (filterIDs: string[]) => void
-}) {
+function FoodCards() {
+  const {
+    filtersAvailable = [],
+    filterIDs = [],
+    setFilterIDs = () => {}
+  } = useContext(SidebarFiltersContext)
+
   if (!filtersAvailable) return null
 
   return (

@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
 import Pill from '@/components/UI/Pill'
-import Button from '@/components/UI/Button'
+import PurchaseButton from '@/components/UI/PurchaseButton'
 import SkeletonLoader from '@/components/UI/SkeletonLoader'
 import { Restaurant } from '@/types/restaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
@@ -20,13 +19,11 @@ function RestaurantCard({
   return (
     <div
       id={restaurant.id || 'restaurant-card'}
-      className={`restaurant-card zoom-on-hover cursor-pointer flex flex-row min-h-[202px] justify-start items-start border border-[#E5E5E5] rounded-xl p-3 bg-opacity-40 bg-white`}
+      className={`card restaurant-card`}
       style={{ position: 'relative' }}>
       {restaurant?.image_url && !loading && (
         <div
-          className={`restaurant-card-bg ${
-            restaurant.open ? 'opacity-100' : 'opacity-10'
-          }`}
+          className={`restaurant-card-bg ${restaurant.open && 'active'}`}
           style={{
             backgroundImage: `url(${restaurant.image_url})`
           }}></div>
@@ -68,15 +65,15 @@ function RestaurantCard({
               <Pill disabled>Opens tomorrow at 12 pm</Pill>
             </div>
           )}
-          <div className="flex flex-row justify-between items-center w-full">
+          <div className="flex flex-row justify-between items-end w-full">
             <h3 className={!restaurant.open ? 'text-gray-400' : 'text-black'}>
               {restaurant.name}
             </h3>
-            <Button
+            <PurchaseButton
               alt={`Buy food from ${restaurant.name}`}
               disabled={!restaurant.open}>
               &rarr;
-            </Button>
+            </PurchaseButton>
           </div>
         </div>
       )}

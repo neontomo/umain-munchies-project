@@ -17,9 +17,7 @@ function Card({
     <div
       style={{ position: 'relative' }}
       onClick={onClick}
-      className={`food-card cursor-pointer flex flex-row justify-between border rounded-xl p-4 bg-white min-h-[80px] min-w-[160px] hover:bg-gray-100 transition-all duration-300 ${
-        select ? 'border-gray-400' : 'border-[#E5E5E5]'
-      }`}>
+      className={`card food-card ${select && 'active'}`}>
       {icon && !loading && (
         <div
           className={`food-card-bg`}

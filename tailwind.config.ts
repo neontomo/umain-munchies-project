@@ -10,10 +10,15 @@ module.exports = {
       },
       transitionProperty: {
         height: 'height'
+      },
+      backgroundSize: {
+        small: '80px 80px',
+        medium: '140px 140px'
       }
     }
   },
   plugins: [require('tailwindcss'), require('tailwind-scrollbar-hide')],
+
   corePlugins: {
     preflight: true
   }
