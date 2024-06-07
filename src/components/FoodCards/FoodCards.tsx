@@ -31,22 +31,24 @@ function FoodCards() {
               </>
             ) : (
               <>
-                {Object.values(filtersAvailable).map((filter) => (
-                  <Card
-                    key={filter.id}
-                    title={filter.name}
-                    icon={filter.image_url}
-                    onClick={() => {
-                      addOrRemoveFilter({
-                        filterIDs,
-                        filterID: filter.id,
-                        setFilterIDs
-                      })
-                    }}
-                    select={
-                      filterIDs.length > 0 && filterIDs.includes(filter.id)
-                    }
-                  />
+                {Object.values(filtersAvailable).map((filter, index) => (
+                  <>
+                    <Card
+                      key={filter.id || index}
+                      title={filter.name}
+                      icon={filter.image_url}
+                      onClick={() => {
+                        addOrRemoveFilter({
+                          filterIDs,
+                          filterID: filter.id,
+                          setFilterIDs
+                        })
+                      }}
+                      select={
+                        filterIDs.length > 0 && filterIDs.includes(filter.id)
+                      }
+                    />
+                  </>
                 ))}
               </>
             )}
