@@ -1,7 +1,9 @@
 import { createContext } from 'react'
 import { filter } from '@/types/filters'
+import { Restaurant } from '@/types/restaurants'
 
 interface ContextProps {
+  restaurants: Restaurant[]
   filtersAvailable: filter[]
   filterIDs: string[]
   priceRangeIDs: string[]

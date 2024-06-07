@@ -3,32 +3,18 @@
 import Card from '@/components/RestaurantCards/Card'
 import { memo, useEffect, useState, useContext } from 'react'
 import { Restaurant } from '@/types/restaurants'
-import { getRestaurants } from '@/api/getRestaurants'
 import { convertMinutesToRanges } from '@/utils/timeManagement'
 import { SidebarFiltersContext } from '@/components/SidebarFilters/SidebarFiltersContext'
 
 const RestaurantCards = memo(function RestaurantCards() {
   const {
+    restaurants = [],
     filterIDs = [],
     priceRangeIDs = [],
     deliveryTimes = []
   } = useContext(SidebarFiltersContext)
 
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
   const [sortedRestaurants, setSortedRestaurants] = useState<Restaurant[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchRestaurants = async () => {
-      const data = await getRestaurants()
-
-      setRestaurants(data?.restaurants || [])
-      setLoading(false)
-    }
-
-    if (!loading) return
-    fetchRestaurants()
-  }, [])
 
   useEffect(() => {
     setSortedRestaurants(
@@ -66,7 +52,7 @@ const RestaurantCards = memo(function RestaurantCards() {
   return (
     <section className="content w-full h-full overflow-x-hidden">
       <h1>
-        {!loading && sortedRestaurants.length === 0 ? (
+        {sortedRestaurants.length === 0 ? (
           'No restaurants found'
         ) : (
           <>Restaurant&rsquo;s</>
@@ -93,8 +79,8 @@ const RestaurantCards = memo(function RestaurantCards() {
           </>
         )}
 
-        {!loading &&
-          sortedRestaurants &&
+        {sortedRestaurants &&
+          sortedRestaurants.length > 0 &&
           sortedRestaurants.map((restaurant) => (
             <Card
               key={restaurant.id}

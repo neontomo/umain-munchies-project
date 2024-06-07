@@ -5,13 +5,16 @@ import SidebarFilters from '@/components/SidebarFilters/SidebarFilters'
 import RestaurantCards from '@/components/RestaurantCards/RestaurantCards'
 import FoodCards from '@/components/FoodCards/FoodCards'
 import { filter } from '@/types/filters'
+import { Restaurant } from '@/types/restaurants'
 import Overlay from '@/components/Mobile/Overlay'
 import { SidebarFiltersContext } from '@/components/SidebarFilters/SidebarFiltersContext'
 
 export default memo(function Home({
-  filtersAvailable
+  filtersAvailable,
+  restaurants
 }: {
   filtersAvailable?: filter[]
+  restaurants?: Restaurant[]
 }) {
   const [overlayOpen, setOverlayOpen] = useState(false)
   const [filterIDs, setFilterIDs] = useState<string[]>([])
@@ -37,6 +40,7 @@ export default memo(function Home({
 
       <SidebarFiltersContext.Provider
         value={{
+          restaurants,
           filtersAvailable,
           filterIDs,
           priceRangeIDs,
