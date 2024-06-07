@@ -59,7 +59,7 @@ a working demo is available at:
 ## API example input
 
 ```bash
-curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/restaurants/' \
+curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaurants/' \
  -H 'accept: application/json'
 ```
 
@@ -131,8 +131,8 @@ curl -X 'GET' \ 'https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/restaura
 ### resources
 
 - [Github with specs](https://github.com/apegroup/umain-work-test-web)
-- [API endpoint](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API/)
-- [API docs](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/API-docs/)
+- [API endpoint](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api/restaurants/)
+- [API docs](https://work-test-web-2024-eze6j4scpq-lz.a.run.app/api-docs/)
 - [Figma design specs](https://www.figma.com/design/263XJno7ii0uEaarJP9Ydw/Umain-Tech-Case?node-id=27-5682)
 
 ## install steps
