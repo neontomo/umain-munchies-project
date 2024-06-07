@@ -25,7 +25,10 @@ function RestaurantCard({
         <div
           className={`restaurant-card-bg ${restaurant.open && 'active'}`}
           style={{
-            backgroundImage: `url(${restaurant.image_url})`
+            backgroundImage: `url(${restaurant.image_url.replace(
+              /\.png$/,
+              '.webp'
+            )})`
           }}></div>
       )}
 

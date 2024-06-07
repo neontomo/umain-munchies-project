@@ -22,7 +22,7 @@ function Card({
         <div
           className={`food-card-bg`}
           style={{
-            backgroundImage: `url(${icon})`
+            backgroundImage: `url(${icon.replace(/\.png$/, '.webp')})`
           }}></div>
       )}
 
